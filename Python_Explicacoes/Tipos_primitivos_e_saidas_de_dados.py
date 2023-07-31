@@ -21,3 +21,14 @@ print("Olá, eu sei que seu nome é {}".format(nome))
 # A terceira e aque eu acho a mais simples é
 nome = "Maria"
 print(f"Olá, eu sei que seu nome é {nome}")
+
+#Para você saber o tipo da variavel, é bem simples:
+
+print(type("Olá, Mundo")) # Nesse caso vai sair esse resultado = type str
+
+print(type(5)) # Nesse caso vai sair esse resultado = type int
+
+print(type(5.5)) # Nesse caso vai sair esse resultado = type float
+
+print(type(True)) # Nesse caso vai sair esse resultado = type bool
+
