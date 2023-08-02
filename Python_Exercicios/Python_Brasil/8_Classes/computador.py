@@ -4,15 +4,15 @@ class PlacaMae:
 
     def selecionar_modelo(self):
         print("Modelos disponíveis de placa mãe:")
-        print("1. Modelo A")
-        print("2. Modelo B")
-        print("3. Modelo C")
+        print("1. MSI MAG Z690 Tomahawk WIFI")
+        print("2. ASUS PRIME Z790-A WIFI DDR5")
+        print("3. Mainboard ASUS ROG X570 Crosshair VIII Hero")
         opcao = int(input("Escolha o modelo da placa mãe (1-3): "))
 
         modelos = {
-            1: "Modelo A",
-            2: "Modelo B",
-            3: "Modelo C",
+            1: "MSI MAG Z690 Tomahawk WIFI",
+            2: "ASUS PRIME Z790-A WIFI DDR5",
+            3: "Mainboard ASUS ROG X570 Crosshair VIII Hero",
         }
 
         self.modelo = modelos.get(opcao, "Modelo inválido")
@@ -91,27 +91,27 @@ class Processador:
     def selecionar_versao(self):
         print("Versões disponíveis do Processador:")
         if self.marca == "Intel":
-            print("1. Versão 1")
-            print("2. Versão 2")
-            print("3. Versão 3")
+            print("1. VIntel Core i9-7980XE")
+            print("2. Intel Core i7-9700k")
+            print("3. Intel Core i5 9600K")
         elif self.marca == "AMD":
-            print("1. Versão A")
-            print("2. Versão B")
-            print("3. Versão C")
+            print("1. AMD Ryzen 7 5800X")
+            print("2. AMD Athlon Dual Core")
+            print("3. AMD 5 5600X")
 
         opcao = int(input("Escolha a versão do Processador (1-3): "))
 
         if self.marca == "Intel":
             versoes = {
-                1: "Versão 1",
-                2: "Versão 2",
-                3: "Versão 3",
+                1: "Intel Core i9-7980XE",
+                2: "Intel Core i7-9700k",
+                3: "Intel Core i5 9600K",
             }
         elif self.marca == "AMD":
             versoes = {
-                1: "Versão A",
-                2: "Versão B",
-                3: "Versão C",
+                1: "AMD Ryzen 7 5800X",
+                2: "AMD Athlon Dual Core",
+                3: "AMD 5 5600X",
             }
 
         self.versao = versoes.get(opcao, "Versão inválida")
@@ -123,15 +123,15 @@ class PlacaDeVideo:
 
     def selecionar_modelo(self):
         print("Modelos disponíveis de Placa de Vídeo:")
-        print("1. Modelo X")
-        print("2. Modelo Y")
-        print("3. Modelo Z")
+        print("1. GeForce RTX 4090")
+        print("2. AMD Radeon RX 6900 XT")
+        print("3. Nvidia GeForce RTX 3090 Ti")
         opcao = int(input("Escolha o modelo da Placa de Vídeo (1-3): "))
 
         modelos = {
-            1: "Modelo X",
-            2: "Modelo Y",
-            3: "Modelo Z",
+            1: "GeForce RTX 4090",
+            2: "AMD Radeon RX 6900 XT",
+            3: "Nvidia GeForce RTX 3090 Ti",
         }
 
         self.modelo = modelos.get(opcao, "Modelo inválido")
@@ -148,15 +148,15 @@ class Cooler:
 
     def selecionar_modelo(self):
         print("Modelos disponíveis de Cooler:")
-        print("1. Cooler A")
-        print("2. Cooler B")
-        print("3. Cooler C")
+        print("1. Noctua NH-D15")
+        print("2. Air Master Hyper 212 RGB")
+        print("3. Cooler Master MasterAir MA410M")
         opcao = int(input("Escolha o modelo do cooler (1-3): "))
 
         modelos = {
-            1: "Cooler A",
-            2: "Cooler B",
-            3: "Cooler C",
+            1: "Noctua NH-D15",
+            2: "Air Master Hyper 212 RGB",
+            3: "Cooler Master MasterAir MA410M",
         }
 
         self.modelo = modelos.get(opcao, "Modelo inválido")
@@ -172,15 +172,15 @@ class Fonte:
 
     def selecionar_modelo(self):
         print("Modelos disponíveis de Fonte:")
-        print("1. Fonte Modelo 1")
-        print("2. Fonte Modelo 2")
-        print("3. Fonte Modelo 3")
+        print("1. Corsair RM850x")
+        print("2. Corsair HX1000-1000W")
+        print("3. Cooler Master Elite V3 Full Range 300W")
         opcao = int(input("Escolha o modelo da Fonte (1-3): "))
 
         modelos = {
-            1: "Fonte Modelo 1",
-            2: "Fonte Modelo 2",
-            3: "Fonte Modelo 3",
+            1: "Corsair RM850x",
+            2: "Corsair HX1000-1000W",
+            3: "Cooler Master Elite V3 Full Range 300W",
         }
 
         self.modelo = modelos.get(opcao, "Modelo inválido")
