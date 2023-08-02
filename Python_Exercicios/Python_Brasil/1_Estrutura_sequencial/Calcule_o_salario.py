@@ -4,9 +4,8 @@ Calcule e mostre o total do seu salário no referido mês.
 '''
 ganha_por_hora = float(input("Quanto você ganha por hora?: "))
 hora_trabalhada = float(input("Quantas horas você trabalha?: "))
+dias_do_mes = int(input("Quantas vezes do mês você trabalhou(dias): "))
+salario = (ganha_por_hora * hora_trabalhada) * dias_do_mes
 
-salario = (ganha_por_hora * hora_trabalhada) * 21
-
-print(
-    f"Você trabalha {hora_trabalhada} horas \nGanha {ganha_por_hora} reais por horas.\nSeu salário é de {salario} reais por mês."
-)
+print(f"Você trabalhou: {dias_do_mes} dias.\nTrabalhou: {hora_trabalhada} horas por dia.\nVocê ganha: {ganha_por_hora} reais por hora.\nSeu alário desde mês é: {salario} reais.")
+print("Se divirta com esse dinheiro!")
