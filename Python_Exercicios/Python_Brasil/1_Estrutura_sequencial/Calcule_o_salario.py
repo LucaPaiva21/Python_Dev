@@ -7,4 +7,6 @@ hora_trabalhada = float(input("Quantas horas você trabalha?: "))
 
 salario = (ganha_por_hora * hora_trabalhada) * 21
 
-print(f"Você trabalha {hora_trabalhada}")
+print(
+    f"Você trabalha {hora_trabalhada} horas \nGanha {ganha_por_hora} reais por horas.\nSeu salário é de {salario} reais por mês."
+)
