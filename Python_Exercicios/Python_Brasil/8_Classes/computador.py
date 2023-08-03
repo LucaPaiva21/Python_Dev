@@ -186,112 +186,84 @@ class Fonte:
         self.modelo = modelos.get(opcao, "Modelo inválido")
 
 
-class Computador:
-    def __init__(self):
-        self.placa_mae = None
-        self.memoria_ram = None
-        self.memoria_interna = None
-        self.processador = None
-        self.placa_video = None
-        self.cooler = None
-        self.fonte = None
-
-    def configurar(self):
-        self.placa_mae = self.selecionar_placa_mae()
-        self.memoria_ram = self.selecionar_memoria_ram()
-        self.memoria_interna = self.selecionar_memoria_interna()
-        self.processador = self.selecionar_processador()
-        self.placa_video = self.selecionar_placa_video()
-        self.cooler = self.selecionar_cooler()
-        self.fonte = self.selecionar_fonte()
-
-    def selecionar_placa_mae(self):
-        placa_mae = PlacaMae()
-        placa_mae.selecionar_modelo()
-        return placa_mae.modelo
-
-    def selecionar_memoria_ram(self):
-        memoria_ram = MemoriaRAM()
-        memoria_ram.selecionar_tipo()
-        memoria_ram.selecionar_quantidade_pentes()
-        memoria_ram.selecionar_capacidade_gigas()
-        return {
-            "Tipo": memoria_ram.tipo,
-            "Quantidade de Pentes": memoria_ram.quantidade_pentes,
-            "Capacidade por Pente": memoria_ram.capacidade_gigas,
-        }
-
-    def selecionar_memoria_interna(self):
-        memoria_interna = MemoriaInterna()
-        memoria_interna.selecionar_tipo()
-        memoria_interna.selecionar_capacidade_gigas()
-        return {
-            "Tipo": memoria_interna.tipo_selecionado,
-            "Capacidade": memoria_interna.capacidade_gigas,
-        }
-
-    def selecionar_processador(self):
-        processador = Processador()
-        processador.selecionar_marca()
-        processador.selecionar_versao()
-        return {
-            "Marca": processador.marca,
-            "Versão": processador.versao,
-        }
-
-    def selecionar_placa_video(self):
-        placa_video = PlacaDeVideo()
-        placa_video.selecionar_modelo()
-        return placa_video.modelo
-
-    def selecionar_cooler(self):
-        cooler = Cooler()
-        cooler.selecionar_quantidade()
-        cooler.selecionar_modelo()
-        return {
-            "Quantidade": cooler.quantidade,
-            "Modelo": cooler.modelo,
-        }
-
-    def selecionar_fonte(self):
-        fonte = Fonte()
-        fonte.selecionar_voltagem()
-        fonte.selecionar_modelo()
-        return {
-            "Voltagem": fonte.voltagem,
-            "Modelo": fonte.modelo,
-        }
-
-    def exibir_especificacoes(self):
-        print("\n== Especificações do Computador ==")
-        print(f"{'='*35}")
-        print(f"Placa Mãe: {self.placa_mae}")
-        print(f"Memória RAM:")
-        print(f"   Tipo: {self.memoria_ram['Tipo']}")
-        print(f"   Quantidade de Pentes: {self.memoria_ram['Quantidade de Pentes']}")
-        for i, capacidade in enumerate(self.memoria_ram['Capacidade por Pente']):
-            print(f"   Pente {i + 1}: {capacidade}GB")
-        print(f"Memória Interna:")
-        print(f"   Tipo: {self.memoria_interna['Tipo']}")
-        print(f"   Capacidade: {self.memoria_interna['Capacidade']}GB")
-        print(f"Processador:")
-        print(f"   Marca: {self.processador['Marca']}")
-        print(f"   Versão: {self.processador['Versão']}")
-        print(f"Placa de Vídeo: {self.placa_video}")
-        print(f"Cooler:")
-        print(f"   Quantidade: {self.cooler['Quantidade']}")
-        print(f"   Modelo: {self.cooler['Modelo']}")
-        print(f"Fonte:")
-        print(f"   Voltagem: {self.fonte['Voltagem']}V")
-        print(f"   Modelo: {self.fonte['Modelo']}")
-        print(f"{'='*35}\n")
-
+def exibir_especificacoes(computador):
+    print("\n== Especificações do Computador ==")
+    print(f"{'='*35}")
+    print(f"Placa Mãe: {computador['Placa Mãe']}")
+    print(f"Memória RAM:")
+    print(f"   Tipo: {computador['Memória RAM']['Tipo']}")
+    print(f"   Quantidade de Pentes: {computador['Memória RAM']['Quantidade de Pentes']}")
+    for i, capacidade in enumerate(computador['Memória RAM']['Capacidade por Pente']):
+        print(f"   Pente {i + 1}: {capacidade}GB")
+    print(f"Memória Interna:")
+    print(f"   Tipo: {computador['Memória Interna']['Tipo']}")
+    print(f"   Capacidade: {computador['Memória Interna']['Capacidade']}GB")
+    print(f"Processador:")
+    print(f"   Marca: {computador['Processador']['Marca']}")
+    print(f"   Versão: {computador['Processador']['Versão']}")
+    print(f"Placa de Vídeo: {computador['Placa de Vídeo']}")
+    print(f"Cooler:")
+    print(f"   Quantidade: {computador['Cooler']['Quantidade']}")
+    print(f"   Modelo: {computador['Cooler']['Modelo']}")
+    print(f"Fonte:")
+    print(f"   Voltagem: {computador['Fonte']['Voltagem']}V")
+    print(f"   Modelo: {computador['Fonte']['Modelo']}")
+    print(f"{'='*35}\n")
 
 def main():
-    computador = Computador()
-    computador.configurar()
-    computador.exibir_especificacoes()
+    computador = {}
 
+    placa_mae = PlacaMae()
+    placa_mae.selecionar_modelo()
+    computador["Placa Mãe"] = placa_mae.modelo
+
+    memoria_ram = MemoriaRAM()
+    memoria_ram.selecionar_tipo()
+    memoria_ram.selecionar_quantidade_pentes()
+    memoria_ram.selecionar_capacidade_gigas()
+    computador["Memória RAM"] = {
+        "Tipo": memoria_ram.tipo,
+        "Quantidade de Pentes": memoria_ram.quantidade_pentes,
+        "Capacidade por Pente": memoria_ram.capacidade_gigas,
+    }
+
+    memoria_interna = MemoriaInterna()
+    memoria_interna.selecionar_tipo()
+    memoria_interna.selecionar_capacidade_gigas()
+    computador["Memória Interna"] = {
+        "Tipo": memoria_interna.tipo_selecionado,
+        "Capacidade": memoria_interna.capacidade_gigas,
+    }
+
+    processador = Processador()
+    processador.selecionar_marca()
+    processador.selecionar_versao()
+    computador["Processador"] = {
+        "Marca": processador.marca,
+        "Versão": processador.versao,
+    }
+
+    placa_video = PlacaDeVideo()
+    placa_video.selecionar_modelo()
+    computador["Placa de Vídeo"] = placa_video.modelo
+
+    cooler = Cooler()
+    cooler.selecionar_quantidade()
+    cooler.selecionar_modelo()
+    computador["Cooler"] = {
+        "Quantidade": cooler.quantidade,
+        "Modelo": cooler.modelo,
+    }
+
+    fonte = Fonte()
+    fonte.selecionar_voltagem()
+    fonte.selecionar_modelo()
+    computador["Fonte"] = {
+        "Voltagem": fonte.voltagem,
+        "Modelo": fonte.modelo,
+    }
+
+    exibir_especificacoes(computador)
 
 if __name__ == "__main__":
     main()
