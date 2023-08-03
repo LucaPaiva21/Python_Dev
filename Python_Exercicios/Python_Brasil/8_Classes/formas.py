@@ -9,14 +9,14 @@ class Retangulo(Forma):
         self.base = base
         self.altura = altura
 
-    def area(self):
+    def area_retangulo(self):
         return self.base * self.altura
 
 class Circulo(Forma):
     def __init__(self, raio):
         self.raio = raio
 
-    def area(self):
+    def area_circulo(self):
         return math.pi * self.raio ** 2
 
 def main():
@@ -35,11 +35,11 @@ def main():
             base = float(input("Digite a base do retângulo: "))
             altura = float(input("Digite a altura do retângulo: "))
             retangulo = Retangulo(base, altura)
-            print(f"A área do retângulo é: {retangulo.area()}")
+            print(f"A área do retângulo é: {retangulo.area_retangulo()}")
         elif escolha == 2:
             raio = float(input("Digite o raio do círculo: "))
             circulo = Circulo(raio)
-            print(f"A área do círculo é: {circulo.area()}")
+            print(f"A área do círculo é: {circulo.area_circulo()}")
         else:
             print("Opção inválida. Tente novamente.")
 
