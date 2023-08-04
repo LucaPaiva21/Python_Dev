@@ -7,3 +7,9 @@ nome = Ana Maria de Souza
 primeiro = Ana
 Ultimo = Souza
 '''
+nome = str(input("Digite seu nome completo: "))
+primeiro = nome.split()
+ultimo = nome.split()
+print(f"Nome completo: {nome}")
+print(f"Primeiro: {primeiro[0]}")
+print(f"Ultimo: {ultimo[-1]}")
