@@ -73,3 +73,22 @@ Junção
 
 "-".join(frase) # Vai juntar tudo com separador que eue escrevi: "Curso-em-Vídeo-Python"
 " ".join(frase) # Caso você queira que a junção seja com espaço: "Curso em Vídeo Python"
+
+'''
+Em Python (e em muitas outras linguagens de programação), as listas são indexadas começando do zero. Isso significa que o primeiro elemento de uma lista tem o índice 0, o segundo elemento tem o índice 1, o terceiro tem o índice 2 e assim por diante.
+
+Quando usamos -1 como índice, estamos acessando o último elemento da lista. O uso de índices negativos é uma característica muito útil em Python, pois permite que você acesse elementos da lista de trás para frente.
+
+Por exemplo, considere a lista nomes com os valores ['Ana', 'Maria', 'de', 'Souza']:
+
+nomes[0] retorna 'Ana'
+nomes[1] retorna 'Maria'
+nomes[2] retorna 'de'
+nomes[3] retorna 'Souza'
+nomes[-1] retorna 'Souza'
+nomes[-2] retorna 'de'
+nomes[-3] retorna 'Maria'
+nomes[-4] retorna 'Ana'
+Portanto, usar nomes[-1] é uma forma conveniente de obter o último elemento da lista, independentemente do seu tamanho, sem precisar saber o número exato de elementos na lista. Nesse caso específico, usamos -1 para acessar o último nome da lista nomes e considerá-lo como o último nome completo da pessoa.
+
+'''
