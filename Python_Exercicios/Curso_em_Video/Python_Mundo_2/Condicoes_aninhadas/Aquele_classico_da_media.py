@@ -9,3 +9,15 @@ Recuperação
 - Média 7.0 superior:
 Aprovado
 '''
+
+nota1 = float(input("Digite a primeira nota: "))
+nota2 = float(input("Digite a segunda nota: "))
+
+media = (nota1 + nota2) / 2
+
+if media >= 7.0:
+    print(f"Aprovado! Sua média foi: {media}")
+elif media < 5.0:
+    print(f"Você foi reprovado! Sua média é: {media}")
+elif media <= 6.9 or media > 5.0:
+    print(f"Você está de recuperação! Sua média foi: {media}")
